@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "8ed851d6-07e6-4d5a-a0e5-40ea7fe8a3f6",
+		"name": "TodoList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "jody.wilderman",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/login",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "donny",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"disabled": true
+						},
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-length": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer UUI3QnRIY0E5dnJXNlZEaXpQY0ZOZlNjTUNNb2Y3Q2Y2Q3FFVkVZWg==",
+						"type": "text"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Upgrade",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "completed",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/todo/?",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"todo",
+						""
+					],
+					"query": [
+						{
+							"key": "order_by",
+							"value": "title",
+							"disabled": true
+						},
+						{
+							"key": "direction",
+							"value": "DESC",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo List with complete/incomplete filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-length": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer NNjYYZLUcEIplPKWu0NzLqHvWnbhngKWQAeAXO9k"
+					},
+					{
+						"key": "Pragma",
+						"type": "text",
+						"value": "no-cache",
+						"disabled": true
+					},
+					{
+						"key": "Upgrade",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "completed",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://todolist.local/api/todo/?completed=1",
+					"protocol": "http",
+					"host": [
+						"todolist",
+						"local"
+					],
+					"path": [
+						"api",
+						"todo",
+						""
+					],
+					"query": [
+						{
+							"key": "order_by",
+							"value": "title",
+							"disabled": true
+						},
+						{
+							"key": "direction",
+							"value": "DESC",
+							"disabled": true
+						},
+						{
+							"key": "completed",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Todo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NNjYYZLUcEIplPKWu0NzLqHvWnbhngKWQAeAXO9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{DOMAIN}}/todo/10",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"todo",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer NNjYYZLUcEIplPKWu0NzLqHvWnbhngKWQAeAXO9k"
+					}
+				],
+				"url": {
+					"raw": "{{DOMAIN}}/todo/21",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"todo",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Todo Complete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer wTMqXWo5auokjwuPUREVfipUhpp3dRw4N0hJ1hke"
+					}
+				],
+				"url": {
+					"raw": "{{DOMAIN}}/todo/complete/14",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"todo",
+						"complete",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer OXRoRDBCVnBKRE01ZHE5dm9TMGhsWHpybXN6ZnJnNk5QT2hNdk5tSw=="
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Test Title",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Test Body",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2021-12-06 10:10:10",
+							"type": "text"
+						},
+						{
+							"key": "offset_unit",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "reminder_offset",
+							"value": "hour",
+							"type": "text"
+						},
+						{
+							"key": "media_file",
+							"type": "file",
+							"src": "/Users/yogeshkumar/Downloads/605d8ec7685101616744135.png"
+						},
+						{
+							"key": "completed",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/todo/update/21?title=Test Title&body=Test Body&completed",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"todo",
+						"update",
+						"21"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Test Title"
+						},
+						{
+							"key": "body",
+							"value": "Test Body"
+						},
+						{
+							"key": "completed",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer NNjYYZLUcEIplPKWu0NzLqHvWnbhngKWQAeAXO9k"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Test Title Create",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Test Title Create",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2021-12-06 10:10:10",
+							"type": "text"
+						},
+						{
+							"key": "offset_unit",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "reminder_offset",
+							"value": "day",
+							"type": "text"
+						},
+						{
+							"key": "media_file",
+							"type": "file",
+							"src": "/Users/yogeshkumar/Downloads/605d8ec7685101616744135.png"
+						},
+						{
+							"key": "completed",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/todo/add?title=Test Title&body=Test Body&media&reminder&completed",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"todo",
+						"add"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Test Title"
+						},
+						{
+							"key": "body",
+							"value": "Test Body"
+						},
+						{
+							"key": "media",
+							"value": null
+						},
+						{
+							"key": "reminder",
+							"value": null
+						},
+						{
+							"key": "completed",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
